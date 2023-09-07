@@ -1,0 +1,97 @@
+// .btn-primary {
+//     color: #fff;
+//     fill: #fff;
+//     background-color: #e60000;
+//     border-color: #e60000;
+    
+// }
+
+.addNewProduct{
+    border: 2px solid rgb(52, 53, 56);
+    background-color: rgb(232, 233, 235);
+    color: rgb(52, 53, 56);
+    border-radius: 27px;
+    height: 54px;
+    width: 30%;
+    margin-top: 48px;
+    max-width: 350px;
+    white-space: nowrap;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.goToCart{
+    background-color: rgb(255, 220, 35);
+    border: none;
+    color: #111;
+    border-radius: 27px;
+    height: 54px;
+    width: 30%;
+    margin-top: 48px;
+    max-width: 350px;
+    white-space: nowrap;
+    margin-left: 8px;
+    margin-right: 8px;}
+
+.addBtn{
+    background-color: rgb(16, 137, 16);
+    color: rgb(255, 255, 255);
+    border: none;
+    white-space: nowrap;
+    line-height: 22px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400,
+}
+
+.detailsBtn{
+    line-height: 22px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400, "opsz" 8;
+    color: rgb(117, 0, 70);
+    background-color: rgb(250, 241, 229);
+    border-color: rgb(117, 0, 70);
+}
+
+.editBtn{
+    background-color: transparent;
+    border: none;
+    color: rgb(43, 120, 198);
+    line-height: 22px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400, "opsz" 8;
+}
+
+.deleteBtn{
+    background-color: transparent;
+    border: none;
+    color: red;
+    line-height: 22px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400, "opsz" 8;
+}
+
+.cartTitle{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: unset;
+    font-variation-settings: "wght" 600, "opsz" 8;
+    margin: 0px;
+}
+
+.cartDescription{
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400, "opsz" 8;
+    color: rgb(114, 118, 126);
+    margin: 0px;
+}
+
+.goBackBtn{
+    line-height: 22px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400, "opsz" 8;
+    color: rgb(52, 53, 56);
+    background-color: rgb(246, 247, 248);
+    border-color: rgb(52, 53, 56);
+}

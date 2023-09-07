@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <div class="row">
+        <div *ngIf="!isUserLogged">
+            <form [formGroup]="userLoginForm" (ngSubmit)="login()" class="center">
+                <div class="mb-3">
+                    <label for="uName" class="form-label">{{'Username' | translate}}</label>
+                    <!-- [class.is-valid]="fullName?.valid" not working -->
+                    <input type="text" formControlName="username" class="form-control" id="uName" name="uName">
+                    <div class="alert alert-warning" [hidden]="fullName?.valid || fullName?.untouched">
+                        <small *ngIf="fullName?.errors?.['required']">Username is required</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="uPassword" class="form-label">{{'Password' | translate}}</label>
+                    <input type="password" formControlName="password" class="form-control" id="uPassword"
+                        name="uPassword">
+                </div>
+                <button [disabled]="isUserLogged || userLoginForm.invalid" type="button" class="btn btn-success m-3"
+                    (click)="login()">{{'Login' | translate}}</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div *ngIf="isUserLogged">
+    <button [disabled]="!isUserLogged" type="button" class="btn btn-danger m-3 logoutBtnInForm"
+        (click)="logout()">Logout</button>
+
+</div>

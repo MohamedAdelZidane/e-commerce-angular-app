@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 ">
+            <button *ngIf="loggedUser" [routerLink]="['/Products/Add']" type="button"
+                class="btn addNewProduct">{{'Create new' | translate}}</button>
+            <button [routerLink]="['/Products/Cart']" type="button" class="btn goToCart">{{'Go To Cart' |
+                translate}}</button>
+
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">{{'No.' | translate}}</th>
+                            <th scope="col">{{'Name' | translate}}</th>
+                            <th scope="col">{{'Image' | translate}}</th>
+                            <th scope="col">{{'Quantity' | translate}}</th>
+                            <th scope="col">{{'Price in USD' | translate}}</th>
+                            <th scope="col">{{'Price in EGP' | translate}}</th>
+                            <th scope="col">{{'Buy' | translate}}</th>
+                            <th scope="col">{{'Details' | translate}}</th>
+                            <th *ngIf="loggedUser" scope="col">{{'Update' | translate}}</th>
+                            <th *ngIf="loggedUser" scope="col">{{'Delete' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="
+                              let prd of productsList
+                                | paginate
+                                  : {
+                                      itemsPerPage: tableSize,
+                                      currentPage: page,
+                                      totalItems: count
+                                    };
+                              let i = index
+                            ">
+                            <td>{{i+1}}</td>
+                            <td>{{prd?.title}}</td>
+                            <!-- lightBox take refrence from this element and pass it to TS file -->
+                            <td><img style="height: 100px; width: 100px;" LightBox="red" defaultColor="blue"
+                                    [src]="prd.image"></td>
+                            <td>
+                                <ng-container [ngSwitch]="prd.rating?.count">
+                                    <div *ngSwitchCase="0">Out of Stock</div>
+                                    <div *ngSwitchCase="1">Last item!</div>
+                                    <div *ngSwitchCase="120" style="color: red;">Last 120 items</div>
+                                    <div *ngSwitchDefault>{{prd.rating?.count}}</div>
+                                </ng-container>
+                            </td>
+                            <td>{{prd.price | currency: 'USD' : 'symbol'}}</td>
+                            <td>{{prd.price | USDtoEGP : 31 | currency: 'EGP' : 'code'}}</td>
+                            <td>
+                                <button class="btn cartBtn btn-primary addBtn" (click)="addToCart(prd.id)"
+                                    type="button">Add To Cart</button>
+                            <td>
+                                <button [routerLink]="['/Products', prd.id]" type="button"
+                                    class="btn btn-primary detailsBtn">Details</button>
+                             <td>
+                                <button *ngIf="loggedUser" [routerLink]="['/Products/Edit/', prd.id]" type="button"
+                                    class="btn btn-primary editBtn">Edit</button>
+                            </td>
+                            <td>
+                                <button *ngIf="loggedUser" type="button" class="btn btn-danger deleteBtn"
+                                    (click)="deleteProduct(prd.id)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination-controls style="text-align: center;" previousLabel="Prev" nextLabel="Next"
+                    (pageChange)="onTableDataChange($event)">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+
+
+</div>

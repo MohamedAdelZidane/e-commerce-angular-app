@@ -1,0 +1,71 @@
+<!-- <div class="text-danger">
+  <h3>To be Removed</h3>
+  <div>
+    {{prd | json}}
+  </div>
+</div> -->
+
+<!-- to prevent the refresh -->
+<!-- <form  #prdFrm="ngForm" (ngSubmit)="addProduct()"> -->
+
+<div class="container">
+  <div class="row" style="margin: 20px 0 0 0;">
+
+    <form [formGroup]="userEditForm" class="center">
+      <div class="mb-3">
+        <label for="pName" class="form-label">Product Name</label>
+        <input formControlName="title" type="text" class="form-control" id="pName" name="pName"
+          [class.is-invalid]="pTitle?.invalid">
+        <div class="alert alert-warning" [hidden]="pTitle?.valid || pTitle?.untouched">
+          <small *ngIf="pTitle?.errors?.['required']">Product name is required</small>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="pPrice" class="form-label">Price</label>
+        <input formControlName="price" type="number" class="form-control" id="pPrice" name="pPrice">
+      </div>
+      <div class="mb-3">
+        <label for="pDescription" class="form-label">Description</label>
+        <textarea formControlName="description" type="text" class="form-control" id="pDescription" name="pDescription">
+          </textarea>
+      </div>
+
+      <div formGroupName="rating">
+        <div class="mb-3">
+          <label for="pRating" class="form-label">Quantity</label>
+          <input formControlName="count" type="number" class="form-control" name="pRating" id="pRating">
+
+        </div>
+        <div class="mb-3">
+          <label for="pRating" class="form-label">Rate</label>
+          <input formControlName="rate" type="number" class="form-control" name="pRating" id="pRating">
+
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="prdCat" class="form-label">Category</label>
+        <select formControlName="category" class="form-select" name="cat" id="prdCat">
+          <option *ngFor="let cat of listOfCat" [value]="cat">{{cat}}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="pImage" class="form-label">Image</label>
+        <img class="imgStyle" [src]="base64" alt="">
+        <input (change)="getImagePath($event)" type="file" class="form-control" id="pImage" name="pImage">
+      </div>
+
+      <div *ngIf="userAction === 'Add'">
+        <button [disabled]="userEditForm.invalid" type="submit" class="btn btn-primary "
+          (click)="addProduct()">Add</button>
+      </div>
+      <div *ngIf="userAction === 'Edit'">
+        <button [disabled]="userEditForm.invalid" type="submit" class="btn btn-primary "
+          (click)="saveEdit()">Save</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

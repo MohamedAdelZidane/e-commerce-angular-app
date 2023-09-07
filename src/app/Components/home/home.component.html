@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row" style="margin: 20px 0 20px 0;">
+        <div class="col-md-12" style="margin-bottom: 10px;">
+            <img *ngIf="isImageShown" [src]="storeInfo.imgURL">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" style="margin-bottom: 10px;">
+            <button type="button" class="btn btn-primary" (click)="ToggleImage()">{{'Toggle Image' |
+                translate}}</button>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="margin-bottom: 10px;">
+            <h1>{{storeInfo.name}} {{'Our branches' | translate}}</h1>
+
+        </div>
+        <div class="col-md-12">
+            <ul>
+                <li *ngFor="let item of storeInfo.branches">
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>

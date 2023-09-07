@@ -1,0 +1,79 @@
+
+
+.addNewProduct{
+    border: 1px solid #246aff;
+    background-color: #fff;
+    color: #111;
+    border-radius: 27px;
+    height: 54px;
+    width: 30%;
+    margin-top: 48px;
+    max-width: 350px;
+    white-space: nowrap;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.goToCart{
+    border: 1px solid #246aff;
+    background-color: #246aff;
+    color: #fff;
+    border-radius: 27px;
+    height: 54px;
+    width: 30%;
+    margin-top: 48px;
+    max-width: 350px;
+    white-space: nowrap;
+    margin-left: 8px;
+    margin-right: 8px;}
+
+.addBtn{
+    background-color: rgb(16, 137, 16);
+    color: rgb(255, 255, 255);
+    border: none;
+    white-space: nowrap;
+    line-height: 22px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400,
+}
+
+.detailsBtn{
+    line-height: 22px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400, "opsz" 8;
+    color: rgb(117, 0, 70);
+    background-color: rgb(250, 241, 229);
+    border-color: rgb(117, 0, 70);
+}
+
+.editBtn{
+    background-color: transparent;
+    border: none;
+    color: rgb(43, 120, 198);
+    line-height: 22px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400, "opsz" 8;
+}
+
+.deleteBtn{
+    background-color: transparent;
+    border: none;
+    color: red;
+    line-height: 22px;
+    font-weight: unset;
+    font-variation-settings: "wght" 400, "opsz" 8;
+}
+
+.translateBTN{
+    border: 2px solid rgb(52, 53, 56);
+    background-color: rgb(232, 233, 235);
+    color: rgb(52, 53, 56);
+    border-radius: 27px;
+    height: 54px;
+    width: 30%;
+    margin-top: 48px;
+    max-width: 350px;
+    white-space: nowrap;
+    margin-left: 8px;
+    margin-right: 8px;
+}

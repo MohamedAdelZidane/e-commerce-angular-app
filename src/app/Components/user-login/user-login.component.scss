@@ -1,0 +1,27 @@
+.loginBtnInForm{
+    font-size: 17px;
+    font-variation-settings: "wght" 700, "opsz" 8;
+    background-color: rgb(16, 137, 16);
+    border-color: rgb(16, 137, 16);
+    color: rgb(255, 255, 255);
+    border-radius: 27px;
+    height: 54px;
+    width: 10%;
+  }
+
+  .logOutBtnInForm{
+    font-size: 17px;
+    font-variation-settings: "wght" 700, "opsz" 8;
+    background-color: red;
+    border-color: red;
+    color: rgb(255, 255, 255);
+    border-radius: 27px;
+    height: 54px;
+    width: 10%;
+  }
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }

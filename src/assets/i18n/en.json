@@ -1,0 +1,21 @@
+{
+    "No.": "No.",
+    "Name": "Name",
+    "Image" : "Image",
+    "Quantity" : "Quantity",
+
+    "Price in USD" : "Price in USD",
+
+    "Price in EGP" : "Price in EGP",
+
+    "Buy" : "Buy",
+
+    "Details" : "Details",
+
+    "Update" : "Update",
+
+    "Delete" : "Delete",
+    "Place an Order:" : "Place an Order:",
+    "Search by category:" : "Search by category:",
+    "Go To Cart" : "Go To Cart"
+}

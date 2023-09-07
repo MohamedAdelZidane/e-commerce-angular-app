@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <div class="row" style="margin: 20px 0 20px 0;">
+        <div class="col">
+            <button type="button" class="btn goBackBtn" (click)="goBack()">Back</button>
+        </div>
+    </div>
+    <div class="row">
+        <div style="margin-bottom: 30px;">
+            <h3 class="cartTitle">Personal Smart & Final Cart</h3>
+            <span class="cartDescription">Shopping in 94105</span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">{{'No.' | translate}}</th>
+                        <th scope="col">{{'Name' | translate}}</th>
+                        <th scope="col">{{'Image' | translate}}</th>
+                        <!-- <th scope="col">{{'Quantity' | translate}}</th> -->
+                        <th scope="col">{{'Price in USD' | translate}}</th>
+                        <th scope="col">{{'Price in EGP' | translate}}</th>
+                        <th scope="col">{{'Count' | translate}}</th>
+                        <th scope="col">{{'Buy' | translate}}</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prd of prdListOfCat let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{prd?.title}}</td>
+                        <!-- lightBox take refrence from this element and pass it to TS file -->
+                        <td><img style="height: 100px; width: 100px;" LightBox="red" defaultColor="blue"
+                                [src]="prd.image"></td>
+                        <td>{{prd.price | currency: 'USD' : 'symbol'}}</td>
+                        <td>{{prd.price | USDtoEGP : 31 | currency: 'EGP' : 'code'}}</td>
+                        <td><input #count class="form-control" type="number"></td>
+                        <td><button type="button" class="btn btn-secondary"
+                                (click)="buy(prd.price, count.value)">Proceed to buy {{count.value}} items</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row">
+                <h3>{{'Total price is' | translate}} <span style="color: green;">{{orderTotalPrice}}</span></h3>
+
+            </div>
+
+        </div>
+    </div>
+</div>
